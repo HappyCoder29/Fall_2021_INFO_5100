@@ -59,6 +59,8 @@ public class Main {
         System.out.println("Max Value of Byte = " + maxByte);
         System.out.println("Min Value of Byte = " + minByte);
 
+        System.out.println("testing");
+
 
         System.out.println("");
 

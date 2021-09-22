@@ -142,10 +142,12 @@ public class Main {
 
         printName("Ashish", "Singh");
 
+
+
     }// End of main function
 
 
-    private static void printName(String firstName, String lastName){
+    static void printName(String firstName, String lastName){
 
 
         String fullName = firstName + lastName;

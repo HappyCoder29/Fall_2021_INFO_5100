@@ -1,6 +1,7 @@
 package edu.northeastern.ashish;
 
 import java.nio.channels.MulticastChannel;
+import java.util.Locale;
 
 public class Main {
 
@@ -143,6 +144,12 @@ public class Main {
         printName("Ashish", "Singh");
 
 
+        System.out.println("******************");
+
+        printDayOfTheWeek(5);
+        printMonth("jan");
+
+
 
     }// End of main function
 
@@ -153,6 +160,72 @@ public class Main {
         String fullName = firstName + lastName;
         System.out.println("Name = " + fullName);
     }
+
+
+    static void printMonth(String month){
+        switch ( month.toLowerCase() ){
+            case "jan", "feb", "mar":
+                System.out.println("Winter");
+                break;
+            case "apr", "may", "jun":
+                System.out.println("Spring");
+                break;
+
+            case "jul", "aug", "sep":
+                System.out.println("Summer");
+                break;
+            case "oct", "nov", "dec":
+                System.out.println("Fall");
+                break;
+            default:
+                System.out.println("Unknown Month");
+                break;
+        }
+
+    }
+
+    static void printDayOfTheWeek(int day){
+        // Sun = 0, Monday = 1, Tuesday = 2 ....
+
+        switch(day){
+            case  0 :
+                System.out.println("Today is Sunday");
+                break;
+            case 1:
+                System.out.println("Today is Monday");
+                break;
+            case 2:
+                System.out.println("Today is Tuesday");
+                break;
+            case 3:
+                System.out.println("Today is Wednesday");
+                break;
+            case 4:
+                System.out.println("Today is Thursday");
+                break;
+            case 5:
+                System.out.println("Today is Friday");
+            case 6:
+                System.out.println("Today is Saturday");
+                break;
+            default:
+                System.out.println("Invalid day");
+                break;
+        }
+
+//        if(day == 0 || day == 6){
+//            System.out.println("Today is not a work day");
+//        }
+//        else if (day == 1 || day == 2 || day == 3 || day == 4 || day == 5){
+//            System.out.println("Today is a work day");
+//        }
+//        else{
+//            System.out.println("Invalid Day");
+//        }
+    }
+
+
+
 
 
 

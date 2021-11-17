@@ -5,7 +5,7 @@ import java.util.Stack;
 public class Main {
 
     public static void main(String[] args) {
-        String str = " 3+5 / 2 ";
+        String str = "13+2*5";
         System.out.println(evaluateExpression(str) );
 
     }
@@ -35,13 +35,15 @@ public class Main {
             case '-':
                 return 4;
             default:
-                return -1;
+                return Integer.MAX_VALUE;
         }
     }
 
     private static int evaluateExpression(String str){
         Stack<Integer> numbers  = new Stack<>();
         Stack<Character> operators  = new Stack<>();
+
+
 
         for ( Character ch : str.toCharArray() ) {
             if(Character.isWhitespace(ch) || Character.isSpaceChar(ch)){
@@ -61,8 +63,10 @@ public class Main {
             }
             int num2 = numbers.pop();
             int num1 = numbers.pop();
-            int result = performOperation(num1, num2, ch);
+            int result = performOperation(num1, num2, operators.pop());
             numbers.push(result);
+            operators.push(ch);
+
         }
 
         while(!operators.isEmpty()){
